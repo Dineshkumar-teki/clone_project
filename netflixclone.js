@@ -19,6 +19,7 @@ const requests = {
     fetchHorrorMovies: `${base_url}/discover/movie?${api}&with_genres=27`,
     fetchRomanceMovies: `${base_url}/discover/movie?${api}&with_genres=10749`,
     fetchDocumentaries: `${base_url}/discover/movie?${api}&with_genres=99`,
+    fetchAnimations: `${base_url}/discover/movie?${api}&with_genres=16`,
 };
 
 //Used to truncate the string
