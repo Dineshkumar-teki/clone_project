@@ -337,4 +337,42 @@ fetch(requests.fetchDocumentaries)
 
     });
 
+//animation
 
+fetch(requests.fetchAnimations)
+    .then((res) => res.json())
+
+    .then((data) => {
+        const headrow = document.getElementById("netflix-mainrow");
+        const row = document.createElement("div");
+
+        row.className = "row";
+        // row.classList.add("netflixrow");
+
+        headrow.appendChild(row);
+
+        const title = document.createElement("h2");
+
+        title.className = "row_title";
+        title.innerText = "Animations";
+
+        row.appendChild(title);
+
+        const row_posters = document.createElement("div");
+        row_posters.className = "row__posters";
+        row.appendChild(row_posters);
+
+        data.results.forEach((movie) => {
+            
+            const poster = document.createElement("img");
+            poster.className = "row__poster";
+
+            var s2 = movie.id;
+
+            poster.id = s2;
+            poster.src = img_url + movie.backdrop_path;
+            row_posters.appendChild(poster);
+
+        });
+
+    });
